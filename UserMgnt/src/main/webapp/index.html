@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="title">
+       User Management Application
+    </div>
+    <div class="social-signup">    
+        <div class="social-btns">
+            <button class="btn social-btn">
+                <img class="icon" src="img/linkedin-icon-3.svg" alt="linkedin icon">
+                <span>Signup with LinkedIn</span>
+            </button>
+            <button class="btn social-btn">
+                <img class="icon" src="img/twitter-6.svg" alt="twitter icon">
+                <span>Signup with Twitter</span>
+            </button>
+            <button class="btn social-btn">
+                <img class="icon" src="img/facebook-3-2.svg" alt="facebook icon">
+                <span>Sigin with Facebook</span>
+            </button>
+        </div>
+    </div>
+    <div class="normal-signup">
+        <div class="form-container">
+            <img src="img/boxes.svg" alt="" class="boxes box1">
+            <img src="img/boxes.svg" alt="" class="boxes box2">
+            <div class="form-heading">
+				<img src="backend.png.png" style="height: 10vh;">
+                <span class="heading">
+                    Sign in
+                </span>
+                <span class="desc">
+                    Get started absolutely free
+                </span>
+            </div>
+            <form class="form-inputs" action="Loginservlet" method=post>
+                <label for="email">
+                    <span>Email</span>
+                    <input class="input input-email" type="text" name="email" autocomplete="off">
+                </label>
+                <label for="password">
+                    <span>Name</span>
+                    <input class="input input-password" type="text" name="password" autocomplete="off">
+                </label>
+                <label for="checkbox">
+                    <input class="input-check" type="checkbox" name="checkbox" id="check">
+                    <span>Creating an account means that you're okay with our Tersm of Service, Privacy Policy, and default Notification Settings </span>
+                </label>
+                <label for="submit">
+                    <input class="btn submit-btn " type="submit" name="submit" value="Sign in">
+                </label>
+                
+            </form>
+            
+        </div>
+
+    </div>
+</body>
+
+</html>

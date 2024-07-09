@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	
+	</style>
+</head>
+<body>
+	<h1>Cart</h1>
+	
+	
+		
+		<ul th:each="cart : ${carts}">
+		       <li>
+		           <span th:text="${cart.book.title}">Book Title</span>
+		           <span th:text="${cart.book.author}">Book Author</span>
+				   <span th:text="${cart.book.price}">Book Author</span>
+		          <!-- <a th:href="@{/cart/remove/{cartId}(cartId=${cart.id})}">Remove from Cart</a>
+		      --> </li>
+		   </ul>
+	</form>
+</body>
+</html>
+
+<!--
+<div class="book-info">
+			<div class="book-cover">
+				<img th:src="@{${book.photoUrl}}" alt="Book Cover">
+			</div>
+			<div class="book-details">
+				<div class="book-title" th:text="${book.title}"></div>
+				<div class="book-author" th:text="${book.author}"></div>
+				<div class="ratings">
+					<div class="star" th:each="i : ${#numbers.sequence(1, 5)}">
+						<i class="fas fa-star"></i>
+					</div>
+				</div>
+				<div class="book-description" th:text="${book.discription}"></div>
+				<div class="details-section">
+					<div class="label">PUBLISHER</div>
+					<div class="value" th:text="${book.publisher}"></div>
+				</div>
+				<div class="details-section">
+					<div class="label">PRICE</div>
+					<div class="value" th:text="${book.price}"></div>
+				</div>
+				<div class="details-section">
+					<div class="label">LANGUAGE</div>
+					<div class="value" th:text="${book.language}"></div>
+				</div>
+				<div class="details-section">
+					<div class="label">PAGES</div>
+					<div class="value" th:text="${book.pages}"></div>
+				</div>
+				<div class="book-buttons">
+					<button class="add-to-read">Add to cart</button>
+					<button class="preview">Add to wishlist</button>
+				</div>
+			</div>
+		</div>-->

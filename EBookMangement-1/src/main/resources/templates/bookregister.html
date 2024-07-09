@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<form th:action="@{/newRegister}" method="post" th:object="${book1}">
+		<label> ID </label>
+		<input type="text" name="id" /> <br> <br>
+		<label> title: </label>
+		<input type="text" name="title" /> <br> <br>
+		<label> author: </label>
+		<input type="text" name="author" /> <br> <br>
+		<label> price </label>
+		<input type="text" name="price" /> <br> <br>
+		<label> language: </label>
+		<input type="text" name="language" /> <br> <br>
+		<label> pages: </label>
+		<input type="text" name="pages" /> <br> <br>
+		<label> publisher </label>
+		<input type="text" name="publisher" /> <br> <br>
+		<label> discription: </label>
+		<input type="text" name="discription" /> <br> <br>
+		<label> photoUrl: </label>
+		<input type="text" name="photoUrl" /> <br> <br>
+		<td><button type="submit" class="btn btn-outline-success">Register</button></td>
+
+	</form>
+</body>
+
+</html>

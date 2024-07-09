@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		background-color: lightblue;
+	}
+	form {
+    border: 2px solid black;
+    position: relative;
+    left: 27%;
+    width: 35vw;
+    height: 110vh;
+   display: grid;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    background-color: lightgrey;
+    }
+    #Register{
+	    width: 28vw;
+    font-size: 45px;
+    font-weight: bolder;
+    text-align: center;
+    position: relative;
+    top: 20px;
+	}
+	#user{
+		    border: 2px solid black;
+    border-radius: 6px;
+    height: 20px;
+	}
+</style>
+</head>
+<body>
+<form action="register" method="post"  id="frm">
+	
+	<h1 id="Register">Registration Form</h1>
+	<table>
+		
+		<tr>
+			<td>
+				<h2>Id</h2>
+			</td>
+			<td>
+				<input type="text" name="id"  style="
+    margin: 23px;
+    height: 30px;
+    width: 18vw;
+">
+			</td>
+		</tr>
+		
+		
+		<tr>
+			<td>
+				<h2>Name</h2>
+			</td>
+			<td><input type="text" name="userName"  style="
+    margin: 23px;
+    height: 30px;
+    width: 18vw;
+"></td>
+		</tr>
+		
+		<tr>
+			<td>
+				<h2>Email</h2>
+			</td>
+			<td><input type="email" name="email"  style="
+    margin: 23px;
+    height: 30px;
+    width: 18vw;
+"></td>
+		</tr>
+		
+		<tr>
+			<td>
+				<h2>Mobile</h2>
+			</td>
+			<td><input type="text" name="mobile"  style="
+    margin: 23px;
+    height: 30px;
+    width: 18vw;
+"></td>
+		</tr>
+		
+	<tr>
+			<td>
+				<h2>CITY</h2>
+			</td>
+			<td><input type="text" name="city"  style="
+    margin: 23px;
+    height: 30px;
+    width: 18vw;
+"></td>
+		</tr>
+		<tr>
+			<td>
+				<h2>Gender</h2>
+			</td>
+			<td><input type="radio" name="gender" value="male">Male &nbsp; 
+			<input type="radio" name="gender" value="Female">Female
+</td>
+		</tr>
+		
+		<tr class="card-footer">
+			<td><button type="submit" class="btn btn-outline-success">Register</button></td>
+			<td><button type="reset"  class="btn btn-outline-danger">Cancle</button></td>
+		</tr>
+	</table>
+	<br>
+	<a  href='userList'><h3 id="user">USER LIST</h3> </a>
+	<!--<a href="searchUser"><h3>SEARCH USER</h3></a>-->
+	</div>
+	
+	
+</form>
+</body>
+</html>

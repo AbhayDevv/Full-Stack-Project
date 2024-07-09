@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="" th:href="@{/css/login.css}">
+</head>
+
+<body>
+	<form class="back" action="#" th:action="@{/login}" th:object="${customer}" method="post">
+	</form>
+	<div class="form">
+		<nav class="nav">
+			<p style="position: relative; top: 1rem;">India's Largest Online Shoping Book Store</p>
+		</nav>
+		<div class="form-heading">
+			<span class="heading">
+				Sign In
+			</span>
+			<span class="desc">
+				Get started absolutely free
+			</span>
+		</div>
+		<div class="form-inputs">
+			<label for="email">
+				<span>Email</span>
+				<input class="input input-email" type="email" id="email" th:value="${email}" placeholder="email">
+			</label>
+			<label for="password">
+				<span>Password</span>
+				<input class="input input-password" type="password" id="password" th:value="${password}"
+					placeholder="password">
+			</label>
+			
+			<label for="checkbox">
+				<input class="input-check" type="checkbox" name="checkbox" id="check">
+				<span style="color:black">Creating an account means that you're okay with our Tersm of Service, Privacy
+					Policy, and default Notification Settings </span>
+			</label>
+			<label for="submit">
+				<input class="btn submit-btn " type="submit" name="submit" value="Sign In">
+			</label>
+			<h4 style="color: red; margin-left: 8rem; margin-top: -.9rem;"><a
+					th:href="@{http://localhost:5051/registeration}">New to Bookswagon?Sign up</a></h4>
+			<h4 class="footer">By continuing, I agree to the terms of the <a
+					th:href="@{https://www.contextbookshop.com/terms-conditions}" style="color: red;">Terms of Use</a>
+				&<a th:href="@{https://www.contextbookshop.com/terms-conditions}" style="color: red;">privacy Policy</a>
+			</h4>
+
+		</div>
+
+	</div>
+
+	</div>
+	</div>
+
+</body>
+
+</html>

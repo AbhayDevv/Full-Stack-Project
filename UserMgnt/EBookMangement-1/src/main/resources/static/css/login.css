@@ -1,0 +1,124 @@
+@charset "UTF-8";
+.form-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-heading>.heading {
+    font-size: 3rem;
+    font-weight: 500;
+    color: black;
+    letter-spacing: 0.2rem;
+}
+
+.form-heading>.desc {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: black;
+}
+
+/* // // // // // // // // //  */
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 70vh;
+    margin-left: 2.1rem;
+
+}
+
+.form-inputs>label {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.form-inputs>label>.input {
+    border-radius: 5px;
+    padding: 0.3rem;
+
+    border: 1px solid black;
+    box-shadow: 1px 1px 2px aqua;
+}
+
+.form-inputs>label>.input:hover,
+.form-inputs>label>.input:active {
+    transition: all 100ms;
+    box-shadow: 2px 2px 3px black;
+}
+
+.form-inputs>label:nth-child(3) {
+    flex-direction: row;
+
+}
+
+.submit-btn {
+    border: 0px;
+    border-radius: 5rem;
+    box-shadow: 1px 1px 3px rgb(86, 83, 83);
+    background-color:red;
+
+    font-size: 1.05rem;
+    font-family: "Roboto",
+        sans-serif;
+
+    padding: 0.3rem;
+    color: white;
+}
+body{
+	height: 80vh;
+}
+
+.submit-btn:hover {
+    transition: all 100ms;
+    box-shadow: 2px 2px 3px aqua;
+    background-color: red;
+}
+
+/* ///////////////////////////////////////////////// */
+.boxes {
+    width: 150px;
+    position: absolute;
+}
+.box1{
+top: 2px;
+right: 2px;
+}
+.box2{
+    bottom: 2px;
+    left: 2px;
+}
+.form{
+	border: 2px solid none;
+	background-color: white;
+	width: 36vw;
+	height: 90vh;
+	margin: 5rem;
+	margin-left: 25rem;
+	position: relative;
+	bottom: 40rem;
+	border-radius:10px;
+
+}
+.back{
+	background-image:url(/image/library.png);
+	height: 100vh;
+	filter: blur(2px);
+	opacity: 0.9;
+}
+.nav{
+	border: 2px solid none;
+	height: 13vh;
+	width: 36vw;
+	text-align: center;
+	font-size: 26px;
+	color: white;
+	background-color: dodgerblue;
+}
+.footer{
+	margin-top:-2rem;
+	margin-left: 2.5rem;
+}

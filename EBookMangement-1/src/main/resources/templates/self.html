@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<form th:action="@{/UploadImage}" method="post" enctype="multipart/form-data">
+
+		<label>BookId</label>
+		<input type=" text" name="bookId" placeholder="id" disabled>
+		<br>
+
+		<label>Title</label>
+		<input type="text" name="title" placeholder="title">
+		<br>
+
+		<label>Author</label>
+		<input type="text" name="author" placeholder="author">
+		<br>
+		<label>RatingCount</label>
+		<input type="text" name="ratingCount" placeholder="ratingCount">
+		<br>
+		<label>Price</label>
+		<input type="text" name="price" placeholder="price">
+		<br>
+		<label>Publisher</label>
+		<input type="text" name="publisher" placeholder="publisher">
+		<br>
+		<label>Discription</label>
+		<input type="text" name="discription" placeholder="discription">
+		<br>
+		<label>Pages</label>
+		<input type="text" name="pages" placeholder="pages">
+		<br>
+		<label>ImageData</label>
+		<input type="file" name="image" placeholder="imageData">
+		<button type="submit">Upload</button>
+
+
+
+	</form>
+</body>
+
+</html>

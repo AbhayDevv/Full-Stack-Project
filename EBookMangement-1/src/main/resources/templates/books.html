@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Book List</title>
+	<style>
+		/* Include the CSS styles provided earlier */
+		body {
+			font-family: Arial, sans-serif;
+		}
+
+		.book-list {
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		.book-item {
+			display: flex;
+			border-bottom: 1px solid #ddd;
+			padding: 20px 0;
+		}
+
+		.book-cover {
+			width: 150px;
+			margin-right: 20px;
+		}
+
+		.book-cover img {
+			width: 100%;
+			height: auto;
+		}
+
+		.book-details {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.book-title {
+			font-size: 18px;
+			font-weight: bold;
+			margin: 0;
+		}
+
+		.book-series {
+			font-size: 14px;
+			color: #007185;
+		}
+
+		.book-author {
+			font-size: 14px;
+			color: #555;
+		}
+
+		.book-seller {
+			font-size: 14px;
+			color: #555;
+		}
+
+		.book-rating {
+			display: flex;
+			align-items: center;
+			margin: 10px 0;
+		}
+
+		.book-rating span {
+			margin-left: 5px;
+			color: #555;
+		}
+
+		.book-price {
+			font-size: 16px;
+			color: #B12704;
+			margin: 10px 0;
+		}
+
+		.book-price span {
+			color: #555;
+		}
+
+		.book-availability {
+			font-size: 14px;
+			color: #555;
+			margin: 10px 0;
+		}
+
+		.buy-button {
+			background-color: #FFA41C;
+			border: none;
+			padding: 10px 20px;
+			color: white;
+			font-size: 16px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<div class="book-list">
+		<div th:each="book : ${books}" class="book-item">
+			<div class="book-cover">
+				<img th:src="@{${book.photoUrl}}" alt="Book Cover">
+			</div>
+			<div class="book-details">
+				<p class="book-title" th:text="${book.title}"></p>
+				<p class="book-author" th:text="${book.author}"></p>
+				<p class="book-id" th:text="${book.id}"></p>
+				<p class="book-seller">Sold by: Amazon.com Services LLC</p>
+				<div class="book-rating">
+					<!--<img th:src="@{${book.ratingImage}}" alt="Rating">-->
+					<!--<span th:text="${book.ratingCount}"></span>-->
+				</div>
+				<p class="book-price">
+					<span th:text="${book.price}"></span>
+					<!--<span th:text="${book.originalPrice}"></span>-->
+				</p>
+				<p class="book-availability">Available instantly</p>
+				<a th:href="@{/books/{id}(id=${book.id})}"><button class=" buy-button">Buy now with
+						1-Click</button></a>
+				 
+				<!--<button type="submit" th:formaction="@{/add-to-cart/{id}(id=${book.id})}">Add to Cart</button>
+-->
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
