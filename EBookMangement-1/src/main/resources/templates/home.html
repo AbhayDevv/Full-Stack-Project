@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>EBook Management System</title>
 	<link rel="stylesheet" href="" th:href="@{/css/style.css}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
 <body>
@@ -16,22 +18,20 @@
 			</div>
 
 			<div style="margin-left: 50rem;" class="auth-buttons">
-				<a th:href="@{http://localhost:5051/loginapp}"><button class="authh">Login</button></a>
+				<a th:href="@{http://localhost:5051/login}"><button class="authh">Login</button></a>
 				<!--	<a th:href="@{http://localhost:5051/index}"><button style="background-color: limegreen;">Cart</button></a>-->
 			</div>
 		</div>
-		<nav style=" height: 5vh; font-size: 20px;">
+		<nav style=" height: 9vh; font-size: 20px;">
 			<a href="#">Home</a>
-			<a href="#">YourCart</a>
+			<a th:href="@{http://localhost:5051/cart}">YourCart</a>
 			<a href="#">Setting</a>
 			<a href="#">Contact Us</a>
 		</nav>
 	</header>
 	<main>
 		<section style="margin-top: 7rem;" class="hero">
-			<img class="main" height="550vh" width="1340vw" src=""
-				th:src="@{/image/main1.png}"
-				alt="">
+			<img class="main" height="550vh" width="1340vw" src="" th:src="@{/image/main1.png}" alt="">
 			<!--<h2 class="main2">EBook Management System</h2>-->
 		</section>
 		<div class="box">
@@ -76,55 +76,36 @@
 				class="" alt="">
 		</div>
 		<section class="recent-books">
-			<h1 style="font-size: 50px; font-family: monospace; color: orangered; margin-top: -1rem;">Recent Book</h1>
-			<div class="books">
-				<div class="book">
-					<img src="" th:src="@{/image/book1.png}" alt="">
-					<h3>CORE JAVA</h3>
-					<button>Add Cart</button>
-					<button>View Details</button>
+			<h1 style="font-size: 50px; color: orangered; margin-top: -1rem;">Recent Book</h1>
+
+			<div class="bokk">
+				<div th:each="book : ${books}" class="book-item">
+					<div class="book-cover" style="  border: 2px solid none; height: 67vh; width: 15.4vw;">
+
+						<img class="books" style="height: 39vh; width:15vw;" th:src="@{${book.photoUrl}}"
+							alt="Book Cover">
+						<p class="books" th:text="${book.title}"></p>
+						<span class="books" th:text="${book.price}"></span>
+						<p class="books" th:text="${book.author}"></p>
+						<a class="books" th:href="@{/home/{id}(id=${book.id})}"><button class=" buy-button">Buy now with
+								1-Click</button></a>
+
+					</div>
 				</div>
-				<div class="book">
-					<img src="" th:src="@{/image/book2.png}" alt="">
-					<h3>PYTHON</h3>
-					<button>Add Cart</button>
-					<button>View Details</button>
-				</div>
-				<div class="book">
-					<img src="" th:src="@{/image/book3.png}">
-					<h3>SPRING BOOT</h3>
-					<button>Add Cart</button>
-					<button>View Details</button>
-				</div>
-				<div class="book">
-					<img src="" th:src="@{/image/book4.png}">
-					<h3>SPRING ANGULAR</h3>
-					<button>Add Cart</button>
-					<button>View Details</button>
-				</div>
-				<div class="book">
-					<img src="" th:src="@{/image/book5.png}" alt="">
-					<h3>CORE AND ADVANCE JAVA</h3>
-					<button>Add Cart</button>
-					<button>View Details</button>
-				</div>
-				<div class="book">
-					<img src="" th:src="@{/image/book6.png}" alt="">
-					<h3>PYTHON</h3>
-					<button>Add Cart</button>
-					<button>View Details</button>
-				</div>
-				<div class="book">
-					<img style="height: 50vh;" src="" th:src="@{/image/book7.png}" alt="">
-					<h3>PYTHON</h3>
-					<button>Add Cart</button>
-					<button>View Details</button>
-				</div>
-				<div class="book">
-					<img style="height: 50vh;" src="" th:src="@{/image/book8.png}" alt="">
-					<h3>PYTHON</h3>
-					<button>Add Cart</button>
-					<button>View Details</button>
+			</div>
+			<div class="bokk" style="margin-top:2rem;">
+				<div th:each="book : ${books}" class="book-item">
+					<div class="book-cover" style="  border: 2px solid none; height: 67vh; width: 15.4vw;">
+
+						<img class="books" style="height: 39vh; width:15vw;" th:src="@{${book.photoUrl}}"
+							alt="Book Cover">
+						<p class="books" th:text="${book.title}"></p>
+						<span class="books" th:text="${book.price}"></span>
+						<p class="books" th:text="${book.author}"></p>
+						<a class="books" th:href="@{/home/{id}(id=${book.id})}"><button class=" buy-button">Buy now with
+								1-Click</button></a>
+
+					</div>
 				</div>
 			</div>
 		</section>
@@ -216,8 +197,5 @@
 			<p>Copyright &copy; 2021 Foolish Developer</p>
 		</div>
 	</footer>
-	<footer>
-
 </body>
-
 </html>

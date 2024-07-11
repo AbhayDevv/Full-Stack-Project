@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="" th:href="@{/css/login.css}">
+	<link rel="stylesheet"
+	 href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	 integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="back"></div>
+	<form style="width: auto; height: 0vh;"  th:action="@{/login}" method="post">
+
+		<div class="form">
+			<nav class="nav">
+				<p style="position: relative; top: 1rem;">India's Largest Online Shoping Book Store</p>
+			</nav>
+			<div class="form-heading">
+				<span class="heading">
+					Sign In
+				</span>
+				<span class="desc">
+					Get started absolutely free
+				</span>
+			</div>
+			<div class="form-inputs">
+				<label for="email">
+					<span>Email</span>
+					<input class="input input-email" type="email" id="email" name="email" placeholder="email" />
+
+				</label>
+				<label for="password">
+					<span>Password</span>
+					<input class="input input-password"s type="password" id="password" name="password" placeholder="password" />
+				</label>
+
+				<label for="checkbox">
+					<input class="input-check" type="checkbox" name="checkbox" id="check">
+					<span style="margin-top: -.6rem;   color:black">Creating an account means that you're okay with our Tersm of Service,
+						Privacy
+						Policy, and default Notification Settings </span>
+				</label>
+				<label for="submit">
+					<input class="btn submit-btn " type="submit" value="Login" />
+
+				</label>
+				<h4 style="font-size: 22px;  color: red; margin-left: 4rem; margin-top: -1.6rem;"><a
+						th:href="@{http://localhost:5051/registeration}">New to Bookswagon?Sign up</a></h4>
+				<h4 class="footer">By continuing, I agree to the terms of the <a
+						th:href="@{https://www.contextbookshop.com/terms-conditions}" style="color: red;">Terms of
+						Use</a>
+					&<a th:href="@{https://www.contextbookshop.com/terms-conditions}" style="color: red;">privacy
+						Policy</a>
+				</h4>
+
+			</div>
+
+		</div>
+		<p th:if="${error}" th:text="${error}">Error message</p>
+	</form>
+</body>
+
+</html>

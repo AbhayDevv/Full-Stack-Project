@@ -15,11 +15,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.project2.customer.Customer;
 import com.project2.service.BookServiceImpl;
+import com.project2.service.CartService;
 
 @Controller
 public class BookControler {
 	@Autowired
 	private BookServiceImpl bookservice;
+	@Autowired
+	private CartService cartservice;
 
 	//Adding book detail to single page
 	@GetMapping("/books")
@@ -29,7 +32,7 @@ public class BookControler {
 	model.addAttribute("books", listBook);
 		return "books";
 	}
-	@GetMapping("/books/{id}")
+	@GetMapping("/book/{bookId}")
     public String getBookDetails(@PathVariable Long id, Model model) {
         com.project2.book.Book book = bookservice.getBook(id);
         List<com.project2.book.Book> relatedBooks = bookservice.getRelatedBooks(book);
@@ -38,6 +41,11 @@ public class BookControler {
         model.addAttribute("relatedBooks", relatedBooks);
 
         return "bookById";
+    }
+	@PostMapping("/books/{bookId}/add-to-cart")
+    public String addToCart(@PathVariable Long bookId) {
+		cartservice.addToCart(bookId);
+        return "redirect:/cart";
     }
 
 	

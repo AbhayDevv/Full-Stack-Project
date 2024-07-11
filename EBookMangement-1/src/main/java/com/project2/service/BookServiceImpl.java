@@ -16,6 +16,7 @@ public class BookServiceImpl implements BookService{
 	private BookDao bookdao;
 	List<Book> list;
 	
+	
 	 public List<Book> getRelatedBooks(Book book) {
 	        // Assuming related books are fetched based on some criteria, e.g., same author or genre
 	        return bookdao.findRelatedBooks(book.getAuthor());
